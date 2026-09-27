@@ -3,6 +3,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ##fitness planning website
 ## NextJS, Tailwind css, toastify, typescript
 ##Features 
--Dynamic routing- detail page
--nextjs routing- page structure
--
+<br>-Dynamic routing- detail page
+<br>-nextjs routing- page structure
+<br>-toastify-alert message
+<br>-useContext-data transfering
+<br>-
