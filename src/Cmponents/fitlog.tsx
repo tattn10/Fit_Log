@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { logType } from "./logType";
+import Link from "next/link";
 
 export type FitlogProps = {
   log: logType;
@@ -8,8 +9,8 @@ export type FitlogProps = {
 const Fitlog = ({ log }: FitlogProps) => {
   return (
     <>
-      <article className="w-full max-w-[340px] overflow-hidden rounded-2xl border border-zinc-800 bg-[#15171c] shadow-lg">
-      {/* Image */}
+    <Link href={`/FitLogs/${log.id}`}>
+      <article className="w-full max-w-[340px] overflow-hidden rounded-2xl border border-zinc-800 bg-[#15171c] shadow-lg transition ease-in-out duration-300 hover:-translate-y-2">
       <div className="relative h-[185px] w-full">
         <Image
           src={log.image}
@@ -19,9 +20,9 @@ const Fitlog = ({ log }: FitlogProps) => {
         />
       </div>
 
-      {/* Content */}
+
       <div className="p-5">
-        {/* Tags */}
+
         <div className="mb-4 flex flex-wrap gap-2">
           <span className="rounded-full bg-[#b7ff00] px-3 py-1 text-[10px] font-black uppercase text-black">
             {log.difficulty}
@@ -37,22 +38,21 @@ const Fitlog = ({ log }: FitlogProps) => {
           ))}
         </div>
 
-        {/* Title */}
+      
         <h2 className="text-lg font-black uppercase tracking-tight text-white">
           {log.name}
         </h2>
 
-        {/* Equipment */}
+
         <p className="mt-1 text-xs text-zinc-500">
           {log.equipment}
         </p>
 
-        {/* Divider */}
         <div className="my-5 h-px bg-zinc-800" />
 
-        {/* Stats */}
+
         <div className="flex items-center gap-4 text-xs text-zinc-400">
-          {/* Duration */}
+  
           <div className="flex items-center gap-1.5">
             <svg
               className="h-4 w-4"
@@ -68,7 +68,7 @@ const Fitlog = ({ log }: FitlogProps) => {
             <span>{log.duration} min</span>
           </div>
 
-          {/* Calories */}
+
           <div className="flex items-center gap-1.5">
             <svg
               className="h-4 w-4"
@@ -81,7 +81,7 @@ const Fitlog = ({ log }: FitlogProps) => {
             <span>{log.caloriesBurned} kcal</span>
           </div>
 
-          {/* Rating */}
+       
           <div className="flex items-center gap-1.5">
             <svg
               className="h-4 w-4"
@@ -98,6 +98,7 @@ const Fitlog = ({ log }: FitlogProps) => {
         </div>
       </div>
     </article>
+    </Link>
         </>
     )
 }

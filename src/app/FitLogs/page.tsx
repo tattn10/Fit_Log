@@ -1,4 +1,6 @@
-import Fitlog from "./fitlog";
+import Fitlog from "@/Cmponents/fitlog";
+import type { logType } from "@/Cmponents/logType";
+
 
 const getLogs = async () => {
   try {
@@ -19,12 +21,14 @@ const Fitlogs = async () => {
   console.log(logDatas)
   return (
     <>
-    <div className="mx-auto max-w-5xl">
+    <div className="mx-auto max-w-[90%] px-4 py-8">
+        <div className="mb-8">
     <h2 className="text-xl">THE LIBRARY</h2>
-    <p>Twelve lifts covering every major muscle group.</p>
-    <section className=" px-4 py-8 text-white grid grid-cols-3 gap-4">
+    <p className="font-light text-sm text-gray-300">Twelve lifts covering every major muscle group.</p>
+    </div>
+    <section className=" text-white grid grid-cols-4 gap-4">
        {
-        logDatas.map((logData)=>
+        logDatas.map((logData:logType)=>
            <Fitlog log={logData} key={logData.id}/>
        )
        }

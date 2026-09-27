@@ -1,5 +1,5 @@
 import Banner from "@/Cmponents/banner";
-import Fitlogs from "@/Cmponents/fitlogs";
+import Fitlogs from "@/app/FitLogs/page";
 import Image from "next/image";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
 <div className="">
 
 <Banner />
- <Fitlogs />
+<Fitlogs />
 </div>
 
     </>

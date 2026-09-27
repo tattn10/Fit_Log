@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 import Image from "next/image";
 import logo from "../assets/logo.png";
 
@@ -16,7 +16,7 @@ const Nav = () => {
       <ul
         tabIndex={-1}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Workouts</a></li>
+        <li><Link href="/FitLogs">Workouts</Link></li>
         <li><a>My Plan</a></li>
       </ul>
     </div>
@@ -27,12 +27,12 @@ const Nav = () => {
   width={30}
   height={30}
 />
-    <a className="btn btn-ghost text-xl">FITLOG</a>
+    <Link href="/" className="btn btn-ghost text-xl">FITLOG</Link>
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-       <li><a>Workouts</a></li>
+       <li><Link href="/FitLogs">Workouts</Link></li>
         <li><a>My Plan</a></li>
     </ul>
   </div>
