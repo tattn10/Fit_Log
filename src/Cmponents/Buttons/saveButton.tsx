@@ -1,5 +1,5 @@
 'use client';
-
+  import { ToastContainer, toast } from 'react-toastify';
 import { useLogContext } from "@/Context/logContext";
 import type { logType } from "@/Cmponents/logType";
 
@@ -10,6 +10,7 @@ const SaveButton = ({ log }: { log: logType }) => {
   const handleSave = () => {
     if (alreadySaved) return;
     setSave((prev) => [...prev, log]);
+    toast(`${log.name} is added to saved logs`)
   };
 
   return (
