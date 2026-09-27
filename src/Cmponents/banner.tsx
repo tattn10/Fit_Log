@@ -22,7 +22,7 @@ EVERY SET.</h1>
        FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
 into today's plan, and watch the week's work add up.
       </p>
-      <button className="btn bg-[#C2F800] text-black">BROWSE WORKOUTS</button>
+     <Link href="/FitLogs"> <button className="btn bg-[#C2F800] text-black">BROWSE WORKOUTS</button></Link>
     </div>
   </div>
 </div>

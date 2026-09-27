@@ -2,6 +2,7 @@ import Fitlog from "@/Cmponents/fitlog";
 import type { logType } from "@/Cmponents/logType";
 
 
+
 const getLogs = async () => {
   try {
     const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
@@ -18,7 +19,7 @@ const getLogs = async () => {
 
 const Fitlogs = async () => {
   const logDatas = await getLogs();
-  console.log(logDatas)
+
   return (
     <>
     <div className="mx-auto max-w-[90%] px-4 py-8">
