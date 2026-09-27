@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <>
         
-<footer className=" p-4 flex justify-between items-center border-t-2 border-b-gray-300">
+<footer className=" p-4 flex justify-between items-center border-t-2 border-b-gray-300 h-12">
 
          <div className="flex justify-center items-center">
   <Image

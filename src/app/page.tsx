@@ -1,3 +1,5 @@
+import Banner from "@/Cmponents/banner";
+import Fitlogs from "@/Cmponents/fitlogs";
 import Image from "next/image";
 
 export default function Home() {
@@ -5,7 +7,8 @@ export default function Home() {
     <>
 <div className="">
 
-    fit-log
+<Banner />
+ <Fitlogs />
 </div>
 
     </>
