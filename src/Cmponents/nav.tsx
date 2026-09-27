@@ -1,10 +1,14 @@
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../assets/logo.png";
+import { useLogContext } from "@/Context/logContext";
 
 const Nav = () => {
-    
-    return (
+  const { add, save } = useLogContext();
+
+  return (
         <>
         <header className="border-b-2 border-b-gray-500">
        <div className="navbar shadow-sm">
@@ -37,13 +41,13 @@ const Nav = () => {
     </ul>
   </div>
   <div className="navbar-end flex items-center gap-4">
-    <Link href="/AddedBooks" className="mx-2 inline-flex items-center gap-2">
+    <Link href="/MyPlan" className="mx-2 inline-flex items-center gap-2">
       <span>Plan</span>
-      <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-[#CCFF00] px-2 text-center text-sm font-medium text-black">0</span>
+      <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-[#CCFF00] px-2 text-center text-sm font-medium text-black">{add.length}</span>
     </Link>
-    <Link href="/SavedBooks" className="mx-2 inline-flex items-center gap-2">
+    <Link href="/SavedLogs" className="mx-2 inline-flex items-center gap-2">
       <span>Saved</span>
-      <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full  px-2 text-center text-sm font-medium text-white">0</span>
+      <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full px-2 text-center text-sm font-medium text-white">{save.length}</span>
     </Link>
   </div>
   

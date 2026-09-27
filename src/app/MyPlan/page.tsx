@@ -13,7 +13,7 @@ import SavedLogs from "../SavedLogs/page";
 const Page = () => {
   const[addOrsave,setAddOrsave]= useState<string>("today");
 
-  const { add } = useLogContext();
+  const { add,minute,calories } = useLogContext();
 
   return (
     <main className="min-h-screen px-6 py-10 text-black">
@@ -31,11 +31,11 @@ const Page = () => {
             <p className="mt-1 text-sm text-gray-500">Exercise</p>
           </div>
           <div className="border-r border-gray-200 px-6 py-6 text-center">
-            <h2 className="text-2xl font-bold text-white">0</h2>
+            <h2 className="text-2xl font-bold text-white">{minute}</h2>
             <p className="mt-1 text-sm text-gray-500">Minutes</p>
           </div>
           <div className="px-6 py-6 text-center">
-            <h2 className="text-2xl font-bold text-white">0</h2>
+            <h2 className="text-2xl font-bold text-white">{calories}</h2>
             <p className="mt-1 text-sm text-gray-500">Calories</p>
           </div>
         </div>
@@ -49,7 +49,7 @@ const Page = () => {
           </button>
         </div>
 
-        {add.length === 0 ? (
+        {addOrsave === "today" && add.length === 0 ? (
           <div className="mt-6 flex min-h-[400px] w-full items-center justify-center rounded-xl border border-gray-200 bg-white">
             <div className="text-center">
               <h2 className="text-2xl font-semibold text-gray-900">Nothing here yet</h2>
@@ -58,9 +58,10 @@ const Page = () => {
               </p>
             </div>
           </div>
+        ) : addOrsave === "today" ? (
+          <AddedLogs />
         ) : (
-            addOrsave==="today"? 
-          <AddedLogs /> : <SavedLogs/>
+          <SavedLogs />
         )}
       </div>
     </main>

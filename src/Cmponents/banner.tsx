@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import bannerImg from "../assets/banner.png"
+import { useLogContext } from "@/Context/logContext";
 
 
 const Banner = () => {
-    
+  
     return (
         <>
       <div className="hero bg-base-200 shadow-sm rounded-xl container max-w-[90%] mx-auto my-12 px-4 py-10">

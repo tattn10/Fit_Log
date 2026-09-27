@@ -3,9 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLogContext } from "@/Context/logContext";
 import type { logType } from "@/Cmponents/logType";
+import MarkDoneButton from "@/Cmponents/Buttons/mardDoneButton";
 
 const AddedLogs = () => {
-  const { add } = useLogContext();
+  const { add ,markDone} = useLogContext();
 
   return (
    <>
@@ -82,7 +83,7 @@ const AddedLogs = () => {
             </div>
                 </div>
                 <div>
-                    <button className="border rounded-[9999] py-2 px-4 text-sm bg-[#b7ff00] text-black hover:bg-black hover:text-white hover:border-[#b7ff00] ">Mark As Done</button>
+                   <MarkDoneButton log={log}/>
                     <span className="mr-4"></span>
                     <Link href={`/FitLogs/${log.id}`} className="border rounded-[9999] py-2 px-4 font-sm">Show Details</Link>
                      
