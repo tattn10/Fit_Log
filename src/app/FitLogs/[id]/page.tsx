@@ -1,6 +1,9 @@
+import AddButton from "@/Cmponents/Buttons/addButton";
+import SaveButton from "@/Cmponents/Buttons/saveButton";
 import { logType } from "@/Cmponents/logType";
 import Image from "next/image";
 import Link from "next/link";
+ import { ToastContainer, toast } from 'react-toastify';
 interface bookDetailsPageProps{
   params:Promise<{
     id: string
@@ -65,7 +68,7 @@ const Page =  async ({params}:bookDetailsPageProps) => {
 
         
               <div className="mb-5 flex flex-wrap gap-2">
-                {choosenLog.muscleGroups.map((muscle) => (
+                {choosenLog.muscleGroups.map((muscle:string) => (
                   <span
                     key={muscle}
                     className="rounded-full border border-[#b7ff00]/30 bg-[#b7ff00]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-[#b7ff00]"
@@ -75,12 +78,12 @@ const Page =  async ({params}:bookDetailsPageProps) => {
                 ))}
               </div>
 
-              {/* Title */}
+       
               <h1 className="text-4xl font-black uppercase leading-none tracking-tight sm:text-5xl">
                 {choosenLog.name}
               </h1>
 
-              {/* Equipment */}
+             
               <p className="mt-4 text-sm text-zinc-500">
                 Equipment:{" "}
                 <span className="text-zinc-300">
@@ -88,7 +91,6 @@ const Page =  async ({params}:bookDetailsPageProps) => {
                 </span>
               </p>
 
-              {/* Rating */}
               <div className="mt-5 flex items-center gap-2">
                 <span className="text-[#b7ff00]">★</span>
 
@@ -101,7 +103,7 @@ const Page =  async ({params}:bookDetailsPageProps) => {
                 </span>
               </div>
 
-              {/* Stats */}
+  
               <div className="mt-8 grid grid-cols-3 gap-3">
 
                 <div className="rounded-xl border border-zinc-800 bg-[#101216] p-4">
@@ -147,10 +149,9 @@ const Page =  async ({params}:bookDetailsPageProps) => {
             </div>
           </div>
 
-          {/* Description + Instructions */}
+     
           <div className="grid gap-10 border-t border-zinc-800 p-6 sm:p-10 lg:grid-cols-2">
 
-            {/* Description */}
             <div>
               <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#b7ff00]">
                 About this workout
@@ -163,6 +164,12 @@ const Page =  async ({params}:bookDetailsPageProps) => {
               <p className="mt-4 text-sm leading-7 text-zinc-400">
                 {choosenLog.description}
               </p>
+
+               <div className="mt-6 flex flex-wrap gap-3">
+                     <AddButton log={choosenLog} />
+                      <SaveButton log={choosenLog} />
+          
+               </div>
             </div>
 
     
@@ -177,7 +184,7 @@ const Page =  async ({params}:bookDetailsPageProps) => {
 
               <div className="mt-5 space-y-4">
                 {choosenLog.instructions.map(
-                  (instruction, id) => (
+                  (instruction:string, id:number) => (
                     <div
                       key={id}
                       className="flex gap-4"

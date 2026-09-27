@@ -17,7 +17,7 @@ const Nav = () => {
         tabIndex={-1}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         <li><Link href="/FitLogs">Workouts</Link></li>
-        <li><a>My Plan</a></li>
+        <li><Link href="/AddedBooks">My Plan</Link></li>
       </ul>
     </div>
     <div className="flex justify-center items-center">
@@ -33,18 +33,18 @@ const Nav = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
        <li><Link href="/FitLogs">Workouts</Link></li>
-        <li><a>My Plan</a></li>
+        <li><Link href="/MyPlan">My Plan</Link></li>
     </ul>
   </div>
   <div className="navbar-end flex items-center gap-4">
-    <a className="mx-2 inline-flex items-center gap-2">
+    <Link href="/AddedBooks" className="mx-2 inline-flex items-center gap-2">
       <span>Plan</span>
       <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-[#CCFF00] px-2 text-center text-sm font-medium text-black">0</span>
-    </a>
-    <a className="mx-2 inline-flex items-center gap-2">
+    </Link>
+    <Link href="/SavedBooks" className="mx-2 inline-flex items-center gap-2">
       <span>Saved</span>
       <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full  px-2 text-center text-sm font-medium text-white">0</span>
-    </a>
+    </Link>
   </div>
   
 </div>
