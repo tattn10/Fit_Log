@@ -6,4 +6,4 @@
 <br>-nextjs routing- page structure
 <br>-toastify-alert message
 <br>-useContext-data transfering
-<br>-
+<br>-useState- state changing
